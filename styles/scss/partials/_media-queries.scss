@@ -1,0 +1,140 @@
+// breakpoints
+$break-mobile: 480px;
+$break-mobile-landscape: 568px;
+$break-tablet: 736px;
+$min-large: 1200px;
+$max-large: 1825px;
+
+@function calculate-rem($size) {
+	$rem-size: $size / 16px;
+	@return $rem-size * 1rem;
+}
+
+// mixins
+@mixin font-size($size) {
+	font-size: $size;
+	font-size: calculate-rem($size);
+}
+
+
+/*================ large to small ================*/
+@media only screen and (min-width: $max-large) {
+	#hero .hero-text {
+		top: 65%;
+	}
+}
+
+@media all and (max-width: $break-tablet) {
+	.hidden-md-down {
+		display: none !important;
+	}
+	.toggle-nav {
+		display: block;
+	}
+	#main-nav {
+		display: none;
+	}
+	#footer #slogan p {
+		line-height: 27px;
+		text-align:center;
+		font-size: 22px;
+		padding-top: 15px;
+	}
+	h2,
+	.wedding-details h2,
+	.inner-img h2 {
+		font-size: 24px;
+		line-height: 45px;
+	}
+	.couple-names h2 {
+		font-size: 15px;
+		line-height: 45px;
+		text-align: left;
+		margin-left: 10px;
+	}
+	.namecard-container {
+		width: 65%;
+
+		h2 {
+			line-height:50px;
+			font-size: 20px;
+		}
+	}
+	.about-couple .inner-half > p, 
+	.about-couple .inner-half {
+		padding: 25px 0;
+	}
+	.about-couple .row:first-child .inner-half > p  {
+		padding: 0;
+	}
+	.about-couple .row .inner-half .inner-img {
+	    padding: 0;
+	    border-right: none;
+	}
+}
+
+@media all and (max-width: $break-mobile) {
+	.hidden-xs-down {
+		display: none;
+	}
+	#hero {
+		background: url('../../assets/couple-img.png');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		height: 50vh;
+		min-height: 300px;
+		width: 100%;
+
+		.hero-text {
+			line-height: 31px;
+			font-size: 19px;
+		}
+	}
+	.namecard-container {
+		width: 85%;
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+	.couple-namecard .leaf3 {
+	    width: 500px;
+	    top: -15%;
+	    left: -100px;
+	}
+	.couple-namecard .leaf4 {
+		width: 500px;
+		bottom: 10%;
+		right: -83px;
+	    transform: rotate(12deg);
+	}
+	.wedding-details {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+	.couple-initials .namecard-container {
+		top: 50%;
+	}
+	.couple-initials .leaf2 {
+	    right: -190px;
+	    width: 500px;
+		transform: rotate(40deg);
+		bottom: 20px;
+	}
+	.couple-initials .leaf1 {
+		width: 400px;
+		left: -170px;
+		bottom: -40px;
+	}
+	.couple-img {
+		background-image: url('../../assets/couple-img2-min.png');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		height: 50vh;
+		min-height: 300px;
+		width: 100%;
+	}
+	#bottom-nav .nav {
+		text-align: center;
+	}
+}

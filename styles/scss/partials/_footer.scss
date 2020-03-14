@@ -1,0 +1,48 @@
+#footer {
+	.nav {
+		margin: 10px 0 16px 0;
+
+		li {
+			display: inline-block;
+			margin: 0 11px;
+
+			&:first-of-type {
+				margin-left: 0;
+			}
+		}
+	}
+
+	#legal-terms {
+		float:left;
+	}
+
+	#slogan p{
+		font-family: $header-font-family;
+		font-style: italic;
+		font-weight: 400;
+		line-height: 60px;
+		color: $black;
+		text-align:right;
+		letter-spacing: 1px;
+		text-transform: lowercase;
+	}
+}
+
+#footer a,
+#footer p {
+	line-height: 14px;
+	font-family: $sans-serif;
+	color: $light-grey;
+
+	@include font-size(12px);
+}
+
+#zola-logo {
+	background-image: url('../../assets/zola-logo-minimal.svg');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	width: 100px;
+	min-height: 60px;
+	margin: 0 auto;
+}
